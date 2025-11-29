@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pyenv
+.python-version
+
+# pypi
+pip-wheel-metadata/
+
+# virtualenv
+bankpolicy/
+bankpolicy/*
+
+
+# VS Code
+.vscode/
+
+# Storage and indexes
+storage/
+storage/*
+
+# Logs
+*.log
+
+# Secrets and env
+.env

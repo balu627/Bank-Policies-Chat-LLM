@@ -1,2 +1,13 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Optional: mark vendored or large directories as linguist-vendored (for GitHub language stats)
+storage/ linguist-vendored
+bankpolicy/ linguist-vendored
+
+# NOTE: This file configures attributes (like export-ignore or linguist-vendored),
+# it does NOT act as a .gitignore. To stop tracking files and directories,
+# add them to a `.gitignore` file at the repo root, then untrack them with
+# `git rm --cached` as necessary.
