@@ -64,70 +64,12 @@ but must state clearly:
 “This section is based on general/online information and not from the policy documents.”
 
 🧠 Architecture Overview
-                        ┌────────────────────────┐
-                        │        UI Layer        │
-                        │     (Streamlit App)    │
-                        └────────────┬───────────┘
-                                     │
-                                     ▼
-                        ┌────────────────────────┐
-                        │     FastAPI Backend    │
-                        ├────────────────────────┤
-                        │  /ask endpoint         │
-                        │  Session store         │
-                        │  RAG pipeline          │
-                        └────────────┬───────────┘
-                                     │
-                                     ▼
-                 ┌────────────────────────────────────────┐
-                 │        Retrieval Layer (RAG)           │
-                 ├────────────────────────────────────────┤
-                 │  FAISS Index per bank:                 │
-                 │      storage/sbi/index.faiss           │
-                 │      storage/hdfc/index.faiss          │
-                 │      storage/common/index.faiss        │
-                 │                                        │
-                 │  Metadata per chunk (source file, id)  │
-                 └────────────────────┬───────────────────┘
-                                      │
-                                      ▼
-                    ┌────────────────────────────────┐
-                    │  Gemini LLM (google-genai)     │
-                    │  Structured JSON output only   │
-                    └────────────────────────────────┘
+<img width="486" height="829" alt="image" src="https://github.com/user-attachments/assets/ce6b34e6-a98b-4535-8765-478bf41091bd" />
+
 
 **🗂️ Folder Structure**
 
-Policy Bot/
-│
-├── backend/
-│   ├── api/
-│   │   ├── main.py           → FastAPI server
-│   │   ├── chat_logic.py     → Gemini RAG + JSON logic
-│   │   ├── session_store.py  → Chat history per session
-│   │
-│   ├── ingest/
-│   │   ├── build_indexes.py  → Creates FAISS indexes
-│   │   ├── pdf_utils.py      → PDF reading + chunking
-│   │   ├── config.py         → Data folder paths
-│
-├── data/
-│   ├── common/               → Generic PDFs
-│   ├── sbi/                  → SBI PDFs
-│   ├── hdfc/                 → HDFC PDFs
-│   ├── icici/                → ICICI PDFs
-│
-├── storage/
-│   ├── common/               → FAISS index + metadata.pkl
-│   ├── sbi/
-│   ├── hdfc/
-│
-├── ui/
-│   ├── app.py                → Streamlit floating chat UI
-│
-├── .env                      → Gemini API key
-├── README.md
-└── requirements.txt
+<img width="583" height="851" alt="image" src="https://github.com/user-attachments/assets/6a6632d3-ba79-4238-aba8-09f80838bde6" />
 
 🔧 Setup Instructions
 1️⃣ Clone the project
