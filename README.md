@@ -64,6 +64,8 @@ but must state clearly:
 “This section is based on general/online information and not from the policy documents.”
 
 🧠 Architecture Overview
+
+
 <img width="486" height="829" alt="image" src="https://github.com/user-attachments/assets/ce6b34e6-a98b-4535-8765-478bf41091bd" />
 
 
